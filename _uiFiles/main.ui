@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>382</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>380</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>DataVisualization</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="6" column="0" colspan="2">
+     <widget class="QPushButton" name="graphButton">
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Yoon 윤고딕 550_TT&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Graph 확인</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QListWidget" name="yListWidget"/>
+    </item>
+    <item row="1" column="0" rowspan="5">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Yoon 윤고딕 550_TT&quot;;</string>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QRadioButton" name="histogramButton">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="scatterButton">
+         <property name="text">
+          <string>Scatter plot</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="boxButton">
+         <property name="text">
+          <string>Box plot</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="matrixButton">
+         <property name="text">
+          <string>Matrix plot</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="threedButton">
+         <property name="text">
+          <string>3D plot</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="yLabel">
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Yoon 윤고딕 550_TT&quot;;</string>
+      </property>
+      <property name="text">
+       <string>y 축</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QPushButton" name="csvButton">
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Yoon 윤고딕 550_TT&quot;;</string>
+      </property>
+      <property name="text">
+       <string>CSV 불러오기</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="xLabel">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Yoon 윤고딕 550_TT&quot;;</string>
+      </property>
+      <property name="text">
+       <string>x 축</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QListWidget" name="xListWidget"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
