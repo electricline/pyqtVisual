@@ -40,7 +40,7 @@
        <string notr="true">font: 9pt &quot;Yoon 윤고딕 550_TT&quot;;</string>
       </property>
       <property name="title">
-       <string>GroupBox</string>
+       <string>그래프 종류</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
