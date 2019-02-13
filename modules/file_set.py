@@ -37,12 +37,21 @@ class File_set:
     def data_classification(self, data):
         self.position = 0
         for i in self.columns_list:
-            if(data[i].unique()[0].isdigit()):
+            # if(data[i].unique()[0].isdigit()):
+            # if(type(float(data[i][0])) == float):
+            if (self.isNumber(data[i][0])):
                 self.number_list.append(self.columns_list[self.position])
             else:
                 self.letter_list.append(self.columns_list[self.position])
 
             self.position += 1
+
+        # for i in self.columns_list:
+        #     if(type(float(data[i][0])) == float):
+        #         self.number_list.append(self.columns_list[self.position])
+        #     else:
+        #         self.letter_list.append(self.columns_list[self.position])
+        #     self.position += 1
 
     # Null 값을 많이 포함하고 있는 columns은 제거한후 새로운 columns list를 만든다.
     def list_mining(self, data):
@@ -58,11 +67,19 @@ class File_set:
     def newData_classification(self, data):
         self.position = 0
         for i in self.newColumns_list:
-            if(data[i].unique()[0].isdigit()):
+            # if(data[i].unique()[0].isdigit()):
+            if(self.isNumber(data[i][0])):
                 self.newNumber_list.append(self.newColumns_list[self.position])
             else:
                 self.newLetter_list.append(self.newColumns_list[self.position])
             self.position += 1
+
+        # for i in self.newColumns_list:
+        #     if(type(float(data[i][0])) == float):
+        #         self.newNumber_list.append(self.newColumns_list[self.position])
+        #     else:
+        #         self.newLetter_list.append(self.newColumns_list[self.position])
+        #     self.position += 1
 
     #다른 엑셀 파일을 읽을것을 대비해서 posterior_weight에 대한 예외 처리 구문을 따로 두었음.
     def set_except(self,Letterlist,Numberlist):
@@ -83,6 +100,13 @@ class File_set:
 
     def getLetter(self):
         return self.letter_list
+
+    def isNumber(self,str):
+        try:
+            tmp = float(str)
+            return True
+        except:
+            return False
 
 
 
