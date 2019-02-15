@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="662d5560-ea4b-4c3c-8f34-35ced1f35c1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_uiFiles/main.ui" afterPath="$PROJECT_DIR$/_uiFiles/main.ui" />
       <change beforePath="$PROJECT_DIR$/modules/graph.py" afterPath="$PROJECT_DIR$/modules/graph.py" />
       <change beforePath="$PROJECT_DIR$/modules/visaul_main.py" afterPath="$PROJECT_DIR$/modules/visaul_main.py" />
     </list>
@@ -41,8 +39,8 @@
       <file leaf-file-name="visaul_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/visaul_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="853">
-              <caret line="105" column="65" lean-forward="true" selection-start-line="105" selection-start-column="65" selection-end-line="105" selection-end-column="65" />
+            <state relative-caret-position="382">
+              <caret line="109" column="25" lean-forward="true" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -65,8 +63,8 @@
       <file leaf-file-name="graph.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="119" column="23" lean-forward="true" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+            <state relative-caret-position="244">
+              <caret line="233" column="32" lean-forward="false" selection-start-line="233" selection-start-column="32" selection-end-line="233" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -634,6 +632,16 @@
     <entry file="file://$PROJECT_DIR$/modules/normal_checkage.png" />
     <entry file="file://$PROJECT_DIR$/modules/scatterPlot_age&amp;BySex.png" />
     <entry file="file://$PROJECT_DIR$/modules/scatterPlot_age&amp;posterior_weight.png" />
+    <entry file="file://$PROJECT_DIR$/modules/visaul_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="109" column="25" lean-forward="true" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/file_set.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -644,20 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/visaul_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="853">
-          <caret line="105" column="65" lean-forward="true" selection-start-line="105" selection-start-column="65" selection-end-line="105" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/graph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="119" column="23" lean-forward="true" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+        <state relative-caret-position="244">
+          <caret line="233" column="32" lean-forward="false" selection-start-line="233" selection-start-column="32" selection-end-line="233" selection-end-column="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

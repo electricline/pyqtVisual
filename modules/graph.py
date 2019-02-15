@@ -31,12 +31,33 @@ class Graph:
 
     #box plot 구현 // 문자열은 float형 또는 int형으로 변환을 해줘야 함.
     def box_plot(self,data,var1,var2,var3):
-        df = data[[var1,var2,var3]]
-        df = df.astype(float) #float형으로 변환 int형으로 변환해도 되지만 실수값도 포함하기 위해 이걸로
+        # df = data[[var1,var2,var3]]
+        # df = df.astype(float) #float형으로 변환 int형으로 변환해도 되지만 실수값도 포함하기 위해 이걸로
+        #
+        # df.boxplot(column=[var1, var2, var3])
+        # plt.savefig('boxPlot_'+var1+'&'+var2)
+        # plt.show()
+        try:
 
-        df.boxplot(column=[var1, var2, var3])
-        plt.savefig('boxPlot_'+var1+'&'+var2)
-        plt.show()
+            df = data[0:600]
+            df = data[[var1, var2, var3]]
+            df = df.dropna(how='all')
+            df.astype(float)
+            color_list = list(df[var3].unique())
+            color_list_filter = []
+            for i in color_list:
+                if (i != 'nan'):
+                    color_list_filter.append(i)
+            color_dict = {}
+            for i in color_list_filter:
+                df_filtered_color_var = df[df[var3] == i]
+                color_dict[i] = df_filtered_color_var
+
+            sns.boxplot(x=df[var1].astype(float), y=df[var2].astype(float), hue=df[var3].astype(float))
+            plt.show()
+        except:
+            print("에러다스바!")
+            pass
 
 
     # scatter plot 구현
@@ -201,10 +222,25 @@ class Graph:
         ax = sns.scatterplot(x="total_bill", y="tip", data=tips)
         ax = sns.scatterplot(x="total_bill", y="tip", hue="time", data=tips)
 
-    def matrix(self):
-        df = sns.load_dataset('iris')
-        g = sns.PairGrid(df)
-        g.map(plt.scatter);
+    def matrix_plot(self, data, var1, var2, var3, var4):
+        df = data[0:600]
+        df = data[[var1, var2, var3, var4]]
+        df = df.dropna(how='all')
+        df.astype(float)
+        color_list = list(df[var4].unique())
+        color_list_filter = []
+        for i in color_list:
+            if (i != 'nan'):
+                color_list_filter.append(i)
+        color_dict = {}
+        for i in color_list_filter:
+            df_filtered_color_var = df[df[var4] == i]
+            color_dict[i] = df_filtered_color_var
+
+        new_df = data[[var1, var2, var3, var4]]
+        new_df = new_df.astype(float)
+        g2 = sns.pairplot(new_df, hue=var4, vars=[var1, var2, var3], palette="husl", kind='reg',
+                          plot_kws={'scatter_kws': {'alpha': 0.3}})
         plt.show()
 
     def Plot3D(self, data, var1, var2, var3, var4):

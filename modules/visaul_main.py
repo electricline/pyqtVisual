@@ -102,7 +102,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.df_graph.box_plot(self.data, self.xVar, self.yVar, self.cVar)
 
             elif self.shape == 'matrix':
-                self.df_graph.matrix()
+                self.df_graph.matrix_plot(self.data, self.xVar, self.yVar, self.zVar, self.cVar)
                 #self.df_graph.normal_check(self.data, self.xVar)
                 # print(self.shape, self.xVar, self.yVar)
                 # self.df_graph.seaborn()
