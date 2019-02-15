@@ -30,11 +30,11 @@ class Graph:
         plt.show()
 
     #box plot 구현 // 문자열은 float형 또는 int형으로 변환을 해줘야 함.
-    def box_plot(self,data,var1,var2):
-        df = data[[var1,var2]]
+    def box_plot(self,data,var1,var2,var3):
+        df = data[[var1,var2,var3]]
         df = df.astype(float) #float형으로 변환 int형으로 변환해도 되지만 실수값도 포함하기 위해 이걸로
 
-        df.boxplot(column=[var1, var2])
+        df.boxplot(column=[var1, var2, var3])
         plt.savefig('boxPlot_'+var1+'&'+var2)
         plt.show()
 
@@ -140,7 +140,7 @@ class Graph:
             x = df_sort_color_var[var]
             list_x = list(x)
             plt.hist(list_x, label=color_var + ' = ' + k, rwidth=0.5, color=graph_color[tmp], stacked=True,
-                     histtype='stepfilled', align = 'mid', alpha = 0.7, normed=True)
+                     histtype='stepfilled', align = 'mid', alpha = 0.7)
             tmp += 1
             j += 1
 
@@ -201,3 +201,46 @@ class Graph:
         ax = sns.scatterplot(x="total_bill", y="tip", data=tips)
         ax = sns.scatterplot(x="total_bill", y="tip", hue="time", data=tips)
 
+    def matrix(self):
+        df = sns.load_dataset('iris')
+        g = sns.PairGrid(df)
+        g.map(plt.scatter);
+        plt.show()
+
+    def Plot3D(self, data, var1, var2, var3, var4):
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        df = data[0:600]
+        df = data[[var1, var2, var3, var4]]
+        df = df.dropna(how='all')
+        color_list = list(df[var4].unique())
+        color_list_filter = []
+        for i in color_list:
+            if (i != 'nan'):
+                color_list_filter.append(i)
+
+        color_dict = {}
+
+        for i in color_list_filter:
+            df_filtered_var3 = df[df[var4] == i]
+            color_dict[i] = df_filtered_var3
+
+        graph_color = ['orange', 'grey', 'blue', 'red', 'cyan', 'magenta', 'yellow', 'black', 'white']
+        tmp = 0
+        for i in color_dict:
+            df_sort_var3 = color_dict[i].sort_values([var1], ascending=[True])
+            x = df_sort_var3[var1].astype(float)
+            df_sort_var3 = color_dict[i].sort_values([var2], ascending=[True])
+            y = df_sort_var3[var2].astype(float)
+            df_sort_var3 = color_dict[i].sort_values([var3], ascending=[True])
+            z = df_sort_var3[var3].astype(float)
+
+            ax.scatter(x, y, z, color=graph_color[tmp], alpha=0.7, label=var4 + ' = ' + i)
+            tmp += 1
+
+        ax.set_xlabel(var1)
+        ax.set_ylabel(var2)
+        ax.set_zlabel(var3)
+        plt.title('직업병 예측')
+        plt.legend()
+        plt.show()

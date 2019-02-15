@@ -28,6 +28,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.xListWidget.itemClicked.connect(self.xListWidgetClicked)
         self.yListWidget.itemClicked.connect(self.yListWidgetClicked)
         self.zListWidget.itemClicked.connect(self.zListWidgetClicked)
+        self.cListWidget.itemClicked.connect(self.cListWidgetClicked)
 
         # self.pushButton2.clicked.connect(self.plot)
         # Aquí van los botones
@@ -45,6 +46,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.xListWidget.clear()
             self.yListWidget.clear()
             self.zListWidget.clear()
+            self.cListWidget.clear()
             self.df_file.data_columns(self.data)  # 컬럼 리스트 생성
             self.df_file.data_classification(self.data)  # 범주/이산형 데이터 분류
             self.df_file.list_mining(self.data)  # 새로운 컬럼 리스트 생성
@@ -57,6 +59,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.xListWidget.addItems(self.number)
             self.yListWidget.addItems(self.number)
             self.zListWidget.addItems(self.number)
+            self.cListWidget.addItems(self.number)
 
 
     def radioButtonClicked(self):
@@ -81,6 +84,9 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def zListWidgetClicked(self):
         self.zVar = self.zListWidget.currentItem().text()
 
+    def cListWidgetClicked(self):
+        self.cVar = self.cListWidget.currentItem().text()
+
     def graphButtonClicked(self):
 
         # self.xVar = self.xListWidget.currentItem().text()
@@ -88,19 +94,21 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
 
             if self.shape == 'hist':
-                self.df_graph.histogram(self.data, self.xVar, self.yVar)
+                self.df_graph.histogram(self.data, self.xVar, self.cVar)
             elif self.shape == 'scatter':
-                self.df_graph.scatter_plot(self.data, self.xVar, self.yVar, self.zVar)
+                self.df_graph.scatter_plot(self.data, self.xVar, self.yVar, self.cVar)
 
             elif self.shape == 'box':
-                self.df_graph.box_plot(self.data, self.xVar, self.yVar)
+                self.df_graph.box_plot(self.data, self.xVar, self.yVar, self.cVar)
 
             elif self.shape == 'matrix':
-                self.df_graph.normal_check(self.data, self.xVar)
+                self.df_graph.matrix()
+                #self.df_graph.normal_check(self.data, self.xVar)
                 # print(self.shape, self.xVar, self.yVar)
                 # self.df_graph.seaborn()
             else:
-                self.df_graph.projection(self.data, self.xVar, self.yVar)
+                self.df_graph.Plot3D(self.data, self.xVar, self.yVar, self.zVar, self.cVar)
+                #self.df_graph.projection(self.data, self.xVar, self.yVar)
                 # print(self.shape, self.xVar, self.yVar)
         except:
             pass
